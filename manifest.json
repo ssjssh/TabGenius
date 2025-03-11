@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "TabGenius - Tab Manager for Chrome/Edge",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "tabs", 
+        "tabGroups", 
+        "storage", 
+        "scripting",
+        "notifications",
+        "windows"
+    ],
+    "host_permissions": [
+        "https://api.openai.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icons/icon.jpg"
+    },
+    "icons": {
+        "128": "icons/icon.jpg"
+    },
+    "web_accessible_resources": [{
+        "resources": ["settings.html"],
+        "matches": ["<all_urls>"]
+    }]
+}

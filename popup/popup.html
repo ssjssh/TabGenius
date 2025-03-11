@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c28;
+      color: white;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .ai-group-btn {
+      background-color: #2d2d3e;
+      border: 1px solid #3a3a4c;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .ai-group-btn span {
+      margin-right: 5px;
+    }
+    .section-title {
+      color: #a0a0a0;
+      font-size: 14px;
+      margin: 15px 0 10px 0;
+    }
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+    .option:hover {
+      background-color: #2d2d3e;
+    }
+    .option-icon {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+    .option-text {
+      flex-grow: 1;
+    }
+    .check-icon {
+      margin-left: 10px;
+    }
+    .divider {
+      height: 1px;
+      background-color: #3a3a4c;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Phew AI Tab</h1>
+    <button class="ai-group-btn">
+      <span>✨</span> AI Group
+    </button>
+  </div>
+
+  <div class="section-title">Group by</div>
+  <div class="option">
+    <div class="option-icon">✨</div>
+    <div class="option-text">Group by AI (Pro)</div>
+    <div class="check-icon">✓</div>
+  </div>
+  <div class="option">
+    <div class="option-icon">🔗</div>
+    <div class="option-text">Group by domain</div>
+  </div>
+  <div class="option">
+    <div class="option-icon">⊗</div>
+    <div class="option-text">Cancel Group</div>
+  </div>
+
+  <div class="section-title">Auto Grouping</div>
+  <div class="option">
+    <div class="option-icon">⚫</div>
+    <div class="option-text">Always</div>
+    <div class="check-icon">✓</div>
+  </div>
+  <div class="option">
+    <div class="option-icon">⊗</div>
+    <div class="option-text">Disable</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title">After Grouping</div>
+  <div class="option">
+    <div class="option-icon">🔗</div>
+    <div class="option-text">Sort Tabs By Domain</div>
+  </div>
+
+  <div class="section-title">Sort by Tab Count</div>
+  <div class="option">
+    <div class="option-icon">↓</div>
+    <div class="option-text">Descending</div>
+  </div>
+  <div class="option">
+    <div class="option-icon">↑</div>
+    <div class="option-text">Ascending</div>
+  </div>
+  <div class="option">
+    <div class="option-icon">⊗</div>
+    <div class="option-text">Disable</div>
+    <div class="check-icon">✓</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-title">Actions</div>
+  <div class="option">
+    <div class="option-icon">↻</div>
+    <div class="option-text">Regroup</div>
+  </div>
+  <div class="option">
+    <div class="option-icon">⊠</div>
+    <div class="option-text">Ungroup Existing</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
