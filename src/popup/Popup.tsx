@@ -234,7 +234,8 @@ export const Popup: React.FC = () => {
         </button>
       </div>
 
-      <Section title="Group by">
+      <div className="content">
+        <Section title="Group by">
         <Option
           icon="✨"
           text="Group by AI (Pro)"
@@ -307,6 +308,7 @@ export const Popup: React.FC = () => {
           </Section>
         </>
       )}
+      </div>
     </div>
   );
 };

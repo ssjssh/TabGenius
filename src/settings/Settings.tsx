@@ -103,7 +103,8 @@ export const Settings: React.FC<SettingsProps> = ({ onBack }) => {
         </button>
       </div>
 
-      <div className="form-group">
+      <div className="content">
+        <div className="form-group">
         <label>AI Service Provider</label>
         <select
           value={provider}
@@ -218,6 +219,7 @@ export const Settings: React.FC<SettingsProps> = ({ onBack }) => {
             </a>
           </span>
         )}
+        </div>
       </div>
     </div>
   );
