@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Option } from '../components/Option';
 import { Section } from '../components/Section';
 import { GroupState, AzureConfig } from '../types';
-import { Settings } from '../settings/Settings';
 import { storageService } from '../services/storage';
 import '../styles/global.css';
 
@@ -28,7 +27,6 @@ const getIconForOption = (section: keyof GroupState, value: string): string => {
 };
 
 export const Popup: React.FC = () => {
-  const [showSettings, setShowSettings] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<GroupState>({
     grouping: 'ai',
     autoGroup: 'always',
@@ -62,33 +60,6 @@ export const Popup: React.FC = () => {
       console.log('Current Azure config:', result.azure_config);
     });
   }, []);
-
-  // Add or remove settings-open class and update window size
-  useEffect(() => {
-    const updateWindowSize = async () => {
-      try {
-        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-        if (tab?.windowId) {
-          const win = await chrome.windows.get(tab.windowId);
-          if (win?.type === 'popup' && win.id) {
-            await chrome.windows.update(win.id, {
-              height: showSettings ? 1200 : 800
-            });
-          }
-        }
-      } catch (error) {
-        console.error('Error updating window size:', error);
-      }
-    };
-
-    if (showSettings) {
-      document.body.classList.add('settings-open');
-    } else {
-      document.body.classList.remove('settings-open');
-    }
-    
-    updateWindowSize();
-  }, [showSettings]);
 
   const checkAndOpenApiKeyPage = () => {
     chrome.storage.sync.get(['azure_config'], (result) => {
@@ -294,19 +265,20 @@ export const Popup: React.FC = () => {
         />
       </Section>
 
-      {showSettings ? (
-        <Settings onBack={() => setShowSettings(false)} />
-      ) : (
-        <>
-          <Section title="Actions">
-            <Option
-              icon="⚙️"
-              text="Settings"
-              onClick={() => setShowSettings(true)}
-            />
-          </Section>
-        </>
-      )}
+      <Section title="Actions">
+        <Option
+          icon="⚙️"
+          text="Settings"
+          onClick={() => {
+            chrome.windows.create({
+              url: 'api-key.html',
+              type: 'popup',
+              width: 520,
+              height: 1200
+            });
+          }}
+        />
+      </Section>
       </div>
     </div>
   );
