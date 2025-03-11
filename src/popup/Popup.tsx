@@ -65,11 +65,8 @@ export const Popup: React.FC = () => {
     chrome.storage.sync.get(['azure_config'], (result) => {
       if (!result.azure_config) {
         console.log('No API key found, opening settings page');
-        chrome.windows.create({
-          url: 'settings/index.html',
-          type: 'popup',
-          width: 520,
-          height: 1200
+        chrome.tabs.create({
+          url: 'settings/index.html'
         });
       }
     });
@@ -115,11 +112,8 @@ export const Popup: React.FC = () => {
 
         if (!config) {
           console.log('No API key found, opening config page');
-          await chrome.windows.create({
-          url: 'settings/index.html',
-            type: 'popup',
-            width: 520,
-            height: 1200
+          await chrome.tabs.create({
+            url: 'settings/index.html'
           });
           return;
         }
@@ -270,11 +264,8 @@ export const Popup: React.FC = () => {
           icon="⚙️"
           text="Settings"
           onClick={() => {
-            chrome.windows.create({
-              url: 'settings/index.html',
-              type: 'popup',
-              width: 520,
-              height: 1200
+            chrome.tabs.create({
+              url: 'settings/index.html'
             });
           }}
         />
