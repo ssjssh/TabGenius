@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     popup: './src/popup/index.tsx',
     background: './src/background/index.ts',
-    apiKey: './src/apiKey/index.tsx'
+    settings: './src/settings/index.tsx'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -47,9 +47,9 @@ module.exports = {
       chunks: ['popup'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/apiKey/index.html',
-      filename: 'api-key.html',
-      chunks: ['apiKey'],
+      template: './src/settings/index.html',
+      filename: 'settings/index.html',
+      chunks: ['settings'],
     }),
     new CopyWebpackPlugin({
       patterns: [

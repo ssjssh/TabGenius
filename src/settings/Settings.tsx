@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/global.css';
 import { AzureConfig } from '../types';
 
-export const ApiKey: React.FC = () => {
+export const Settings: React.FC = () => {
   const [config, setConfig] = useState<AzureConfig>({
     apiKey: '',
     endpoint: '',
