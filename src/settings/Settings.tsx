@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/global.css';
+import '../styles/settings.css';
 import { AzureConfig } from '../types';
 
 export const Settings: React.FC = () => {
