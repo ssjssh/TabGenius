@@ -1,11 +1,45 @@
-/* Settings specific styles */
-.container {
-  padding: 24px;
-  max-width: 480px;
-  margin: 0 auto;
+/* Settings Layout */
+.settings-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.container h2 {
+.settings-sidebar {
+  width: 240px;
+  background: var(--bg-elevated);
+  border-right: 1px solid var(--border-color);
+  padding: 24px 0;
+}
+
+.settings-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  max-width: 800px;
+}
+
+.sidebar-item {
+  padding: 12px 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+  background: var(--glass-bg);
+}
+
+.sidebar-item.selected {
+  background: var(--glass-bg);
+  border-left-color: pink;
+  font-weight: 500;
+}
+
+/* Content Styles */
+.settings-content h2 {
   text-align: center;
   margin-bottom: 24px;
   font-size: 24px;
