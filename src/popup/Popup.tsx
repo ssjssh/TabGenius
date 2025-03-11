@@ -298,11 +298,10 @@ export const Popup: React.FC = () => {
         <Settings onBack={() => setShowSettings(false)} />
       ) : (
         <>
-          <div className="divider" />
           <Section title="Actions">
             <Option
               icon="⚙️"
-              text="AI Service Settings"
+              text="Settings"
               onClick={() => setShowSettings(true)}
             />
           </Section>
