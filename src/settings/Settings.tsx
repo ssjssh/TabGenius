@@ -69,46 +69,99 @@ export const Settings: React.FC = () => {
   return (
     <div className="settings-layout">
       <div className="settings-sidebar">
-        <div 
-          className={`sidebar-item ${selectedSection === 'basic' ? 'selected' : ''}`}
-          onClick={() => setSelectedSection('basic')}
-        >
-          Basic Settings
+        <div className="sidebar-section">
+          <div 
+            className={`sidebar-item ${selectedSection === 'basic' ? 'selected' : ''}`}
+            onClick={() => setSelectedSection('basic')}
+          >
+            Basic Settings
+          </div>
+          <div 
+            className={`sidebar-item ${selectedSection === 'translation' ? 'selected' : ''}`}
+            onClick={() => setSelectedSection('translation')}
+          >
+            Translation Services
+          </div>
+          <div 
+            className={`sidebar-item ${selectedSection === 'ai' ? 'selected' : ''}`}
+            onClick={() => setSelectedSection('ai')}
+          >
+            AI Expert
+          </div>
+        </div>
+        <div className="sidebar-section">
+          <div 
+            className={`sidebar-item ${selectedSection === 'subtitles' ? 'selected' : ''}`}
+            onClick={() => setSelectedSection('subtitles')}
+          >
+            Video Subtitles
+          </div>
+          <div 
+            className={`sidebar-item ${selectedSection === 'about' ? 'selected' : ''}`}
+            onClick={() => setSelectedSection('about')}
+          >
+            About
+          </div>
         </div>
       </div>
       <div className="settings-content">
-        <h2>AI Service Settings</h2>
-        <div className="form-group">
-          <label htmlFor="endpoint">Endpoint URL:</label>
-          <input 
-            type="url" 
-            id="endpoint" 
-            value={config.endpoint}
-            onChange={handleChange('endpoint')}
-            placeholder="https://your-resource.openai.azure.com"
-          />
+        <h2>AI Expert Settings</h2>
+        
+        <div className="settings-card">
+          <h3>Current Account</h3>
+          <div className="settings-description">
+            Configure your Azure OpenAI service credentials for AI-powered tab organization.
+          </div>
+          <div className="status-indicator">
+            Current Plan: Free
+            <button className="btn btn-secondary" style={{ marginLeft: '8px' }}>Upgrade</button>
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="apiKey">API Key:</label>
-          <input 
-            type="password" 
-            id="apiKey" 
-            value={config.apiKey}
-            onChange={handleChange('apiKey')}
-            placeholder="Enter your Azure OpenAI API Key"
-          />
+
+        <div className="settings-card">
+          <h3>Azure OpenAI Configuration</h3>
+          <div className="form-group">
+            <label htmlFor="endpoint">
+              Endpoint URL:
+              <span className="tooltip" data-tooltip="Your Azure OpenAI resource endpoint">ⓘ</span>
+            </label>
+            <input 
+              type="url" 
+              id="endpoint" 
+              value={config.endpoint}
+              onChange={handleChange('endpoint')}
+              placeholder="https://your-resource.openai.azure.com"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="apiKey">
+              API Key:
+              <span className="tooltip" data-tooltip="Your Azure OpenAI API key">ⓘ</span>
+            </label>
+            <input 
+              type="password" 
+              id="apiKey" 
+              value={config.apiKey}
+              onChange={handleChange('apiKey')}
+              placeholder="Enter your Azure OpenAI API Key"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="deploymentName">
+              Model Deployment Name:
+              <span className="tooltip" data-tooltip="The name of your deployed model">ⓘ</span>
+            </label>
+            <input 
+              type="text" 
+              id="deploymentName" 
+              value={config.deploymentName}
+              onChange={handleChange('deploymentName')}
+              placeholder="Enter your deployment name"
+            />
+          </div>
+          <button className="btn btn-primary" onClick={handleSave}>Save & Group Tabs</button>
         </div>
-        <div className="form-group">
-          <label htmlFor="deploymentName">Model Deployment Name:</label>
-          <input 
-            type="text" 
-            id="deploymentName" 
-            value={config.deploymentName}
-            onChange={handleChange('deploymentName')}
-            placeholder="Enter your deployment name"
-          />
-        </div>
-        <button className="button" onClick={handleSave}>Save & Group Tabs</button>
+
         <div className="info">
           Find your Azure OpenAI resource in the{' '}
           <a 
