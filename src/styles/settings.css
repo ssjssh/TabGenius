@@ -16,36 +16,25 @@ html, body, #root {
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background: #ffffff;
   max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+html, body, #root, .settings-layout {
+  background: #ffffff;
 }
 
 .settings-sidebar {
   width: 260px;
-  background: #ffffff;
   border-right: 1px solid #e5e7eb;
   padding: 24px 0;
 }
-
-.sidebar-section {
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.sidebar-section:last-child {
-  border-bottom: none;
-}
-
 
 .settings-content {
   flex: 1;
   padding: 32px 48px;
   overflow-y: auto;
   width: 100%;
-  background: #ffffff;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -83,7 +72,6 @@ html, body, #root {
 }
 
 .settings-card {
-  background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 24px;
@@ -255,30 +243,28 @@ input:checked + .toggle-slider:before {
   margin-top: 20px;
   margin-bottom: 16px;
   font-size: 14px;
-  color: var(--text-secondary);
+  color: #6b7280;
   text-align: center;
   padding: 12px;
   border-radius: 10px;
-  transition: all 0.3s ease;
-  background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  background: #f3f4f6;
   border: 1px solid transparent;
 }
 
 .info:hover {
-  border-color: var(--highlight-color);
-  background: var(--bg-elevated);
+  border-color: #2563eb;
+  background: #eff6ff;
 }
 
 .info a {
-  color: var(--text-secondary);
+  color: #4b5563;
   text-decoration: none;
-  border-bottom: 1px dashed var(--text-secondary);
-  transition: all 0.3s ease;
+  border-bottom: 1px dashed #4b5563;
+  transition: all 0.2s ease;
 }
 
 .info a:hover {
-  color: var(--text-primary);
-  border-bottom-color: var(--text-primary);
+  color: #2563eb;
+  border-bottom-color: #2563eb;
 }

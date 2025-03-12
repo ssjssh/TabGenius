@@ -77,26 +77,6 @@ export const Settings: React.FC = () => {
             Basic Settings
           </div>
           <div 
-            className={`sidebar-item ${selectedSection === 'translation' ? 'selected' : ''}`}
-            onClick={() => setSelectedSection('translation')}
-          >
-            Translation Services
-          </div>
-          <div 
-            className={`sidebar-item ${selectedSection === 'ai' ? 'selected' : ''}`}
-            onClick={() => setSelectedSection('ai')}
-          >
-            AI Expert
-          </div>
-        </div>
-        <div className="sidebar-section">
-          <div 
-            className={`sidebar-item ${selectedSection === 'subtitles' ? 'selected' : ''}`}
-            onClick={() => setSelectedSection('subtitles')}
-          >
-            Video Subtitles
-          </div>
-          <div 
             className={`sidebar-item ${selectedSection === 'about' ? 'selected' : ''}`}
             onClick={() => setSelectedSection('about')}
           >
@@ -107,17 +87,6 @@ export const Settings: React.FC = () => {
       <div className="settings-content">
         <h2>AI Expert Settings</h2>
         
-        <div className="settings-card">
-          <h3>Current Account</h3>
-          <div className="settings-description">
-            Configure your Azure OpenAI service credentials for AI-powered tab organization.
-          </div>
-          <div className="status-indicator">
-            Current Plan: Free
-            <button className="btn btn-secondary" style={{ marginLeft: '8px' }}>Upgrade</button>
-          </div>
-        </div>
-
         <div className="settings-card">
           <h3>Azure OpenAI Configuration</h3>
           <div className="form-group">
