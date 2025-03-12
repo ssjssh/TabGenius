@@ -11,10 +11,24 @@ html, body, #root {
   flex-direction: column;
 }
 
+/* Header */
+.settings-header {
+  background: #2563eb;
+  padding: 16px 32px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.settings-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 /* Settings Layout */
 .settings-layout {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 64px); /* Subtract header height */
   overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;

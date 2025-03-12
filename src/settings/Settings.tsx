@@ -67,7 +67,11 @@ export const Settings: React.FC = () => {
   };
 
   return (
-    <div className="settings-layout">
+    <>
+      <header className="settings-header">
+        <h1>TabGenius Settings</h1>
+      </header>
+      <div className="settings-layout">
       <div className="settings-sidebar">
         <div className="sidebar-section">
           <div 
@@ -143,5 +147,6 @@ export const Settings: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
